@@ -3,8 +3,10 @@ import { createClient } from "@supabase/supabase-js";
 
 // 1) Pega aquí los datos de tu proyecto Supabase (Project Settings > API).
 
-const SUPABASE_URL = "grevptschikwlrvipznp";
+
+const SUPABASE_URL = "https://grevptschikwlrvipznp.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_S9SMGx5VvcaJcUkOgY3CLA_XyW3uTgZ";
+
 
 const AIM_TYPES = {
   common:    { label: "Common", cost: 25, income: 2, color: 0xe7edf7, shape: "circle" },
