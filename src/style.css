@@ -1,0 +1,35 @@
+* { box-sizing: border-box; }
+:root { color-scheme: dark; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+body { margin: 0; overflow: hidden; background: #10152d; color: #fff; }
+#game { position: fixed; inset: 0; }
+canvas { display: block; width: 100%; height: 100%; }
+.hud { position: fixed; top: 16px; left: 18px; right: 18px; display: flex; justify-content: space-between; align-items: center; pointer-events: none; gap: 12px; }
+.brand, .logo { font-weight: 1000; letter-spacing: 1px; font-size: clamp(19px, 3vw, 30px); text-shadow: 0 3px 0 #16112e; }
+.brand span, .logo span { color: #7df9ff; }
+.stats { display: flex; gap: 8px; }
+.stat { background: #171b39eF; border: 1px solid #ffffff25; padding: 10px 14px; border-radius: 14px; box-shadow: 0 8px 30px #0003; }
+.panel { background: #151a36ed; border: 1px solid #ffffff25; border-radius: 18px; box-shadow: 0 14px 40px #0004; backdrop-filter: blur(12px); }
+.shop { position: fixed; top: 82px; left: 18px; width: min(265px, calc(100vw - 36px)); padding: 16px; }
+.shop h2 { margin: 0 0 4px; font-size: 18px; }
+.hint, .small { font-size: 12px; line-height: 1.45; color: #b9c2e8; }
+.shop button { display: flex; align-items: center; justify-content: space-between; width: 100%; border: 1px solid #ffffff18; border-radius: 11px; padding: 11px 12px; margin-top: 8px; background: #252b51; color: white; cursor: pointer; font-size: 13px; }
+.shop button:hover { background: #394174; transform: translateY(-1px); }
+.shop button b { color: #ffe66d; }
+.shop .collect { justify-content: center; background: #087f73; font-weight: 800; }
+.rule { height: 1px; background: #ffffff20; margin: 14px 0; }
+.help { position: fixed; bottom: 16px; left: 18px; padding: 12px 15px; font-size: 12px; line-height: 1.8; color: #d5daf6; }
+.help b { color: #fff; font-size: 13px; }
+#toast { position: fixed; bottom: 22px; left: 50%; transform: translate(-50%, 20px); opacity: 0; transition: .2s ease; padding: 12px 18px; border-radius: 12px; background: #11152eeF; border: 1px solid #ffffff35; box-shadow: 0 8px 28px #0004; pointer-events: none; text-align: center; max-width: calc(100vw - 24px); }
+#toast.show { opacity: 1; transform: translate(-50%, 0); }
+.overlay { position: fixed; inset: 0; display: grid; place-items: center; z-index: 10; background: #0c1024eF; }
+.overlay.hidden { display: none; }
+.overlay .panel { padding: 28px; width: min(440px, calc(100vw - 32px)); text-align: center; }
+.overlay p { color: #c4cbed; }
+@media (max-width: 650px) {
+  .shop { top: 76px; left: 10px; width: 205px; padding: 10px; }
+  .shop button { padding: 8px; font-size: 12px; }
+  .shop .hint { font-size: 11px; }
+  .help { left: 10px; bottom: 10px; font-size: 10px; padding: 8px 10px; }
+  .hud { top: 10px; left: 10px; right: 10px; }
+  .stat { padding: 8px 10px; font-size: 12px; }
+}

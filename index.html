@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#10152d" />
+  <title>STEAL AN AIM</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.166.1/build/three.module.js",
+        "@supabase/supabase-js": "https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="game"></div>
+  <div id="loading" class="overlay">
+    <div class="panel">
+      <div class="logo">STEAL <span>AN AIM</span></div>
+      <p id="status">Preparando el mundo...</p>
+      <p class="small">Necesitas configurar Supabase para jugar online.</p>
+    </div>
+  </div>
+  <header class="hud">
+    <div class="brand">STEAL <span>AN AIM</span></div>
+    <div class="stats">
+      <div class="stat">🪙 <strong id="coins">0</strong></div>
+      <div class="stat">👥 <strong id="online">1</strong> online</div>
+    </div>
+  </header>
+  <aside class="shop panel">
+    <h2>🛒 AIM SHOP</h2>
+    <p class="hint">Compra aims para generar monedas.</p>
+    <button data-buy="common">⚪ Common <b>25</b></button>
+    <button data-buy="rare">🔵 Rare <b>100</b></button>
+    <button data-buy="epic">🟣 Epic <b>350</b></button>
+    <button data-buy="legendary">🟡 Legendary <b>1000</b></button>
+    <div class="rule"></div>
+    <p class="hint">Acércate a una base y haz clic en un aim ajeno para intentar robarlo.</p>
+    <button id="collect" class="collect">💰 Recoger ganancias</button>
+  </aside>
+  <div class="help panel">
+    <b>Controles</b><br />
+    <span>WASD / flechas: moverte</span><br />
+    <span>Ratón: mover cámara</span><br />
+    <span>Clic en un aim ajeno: robar</span>
+  </div>
+  <div id="toast" role="status"></div>
+  <script type="module" src="./src/main.js"></script>
+</body>
+</html>
